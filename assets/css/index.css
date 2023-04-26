@@ -5,7 +5,7 @@
     --text-blue: #06098def;
     --text-white: #FFF;
     --font-h2: 6rem;
-    --hover: pink;
+    --hover: yellow;
 }
 html{
     font-size: 62.5%;
@@ -80,7 +80,23 @@ h2 {
     text-transform: uppercase;
     font-weight: bold;
     color: var(--gold);
+    line-height: 2.9rem;    
+    position: relative;
 }
+.navbar>nav a::after{
+    content: " ";
+    width: 0%;
+    height: 4px;
+    background-color: var(--gold);
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    transition: all 0.4s;
+}
+.navbar>nav a:hover::after{
+    width: 100%;
+}
+
 .initial-area{
     width: 100%;
     height: 100vh;
@@ -95,15 +111,22 @@ h2 {
     flex-direction: column;
     justify-content: space-around;
 }
-.initial-left h1{
+.initial-left p:nth-child(1){
+    font-size: 3.8rem;
     margin-top: 6rem;
+}
+.name h1{
+    border-right: 3px solid rgba(0,0,0,0.75);
+    white-space: nowrap;
+    overflow: hidden;
 }
 .initial-right{
     flex:1 ;
 }
-/* .initial img{
-    
-} */
+.typing-animation {
+    animation: cursor 1s infinite steps(40) normal,
+    typing 3.5s steps(40) normal;
+}
 .job {
     font-size: 3.8rem;
     margin-top: 1rem;
@@ -353,6 +376,7 @@ footer{
     margin: 2rem;
     min-width: 30rem;
     max-width: 34rem;
+    border-radius: 0.5rem;
 }
 .item-curso,
 .item-curso-school,
@@ -386,17 +410,53 @@ footer p {
 }
 .footer-contact-item{
     width: 6rem;
-    height:6rem;
+    height: 6rem;
     border-radius: 1rem;
-    border: 1px solid orange;
+    border: 0.2rem solid orange;
+    padding: 0.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.footer-contact-item:hover{
-    background-color: var(--hover);
+.footer-contact-item:hover img{ 
     opacity: 0.5;
+    width: 6.2rem;
+    height: auto;
+}
+.footer-contact-item img{
+    height:auto;
+    width: 100%;
+    background-color:white;
+    border-radius: 1rem;
+    transition: all 0.3s;
 }
 .footer-contacts{
     display: inline-flex;
     gap: 2rem;
-    margin-right: 1rem;
+    margin-right: 0.9rem;
     cursor: pointer;
+}
+
+[data-section] {
+    opacity:0;
+    transition: 1s;
+}
+
+[data-section]{
+    transform:translate3d(-50px, 0px, 0px);
+}
+[data-section].animate {
+    opacity:1;
+    transform:translate3d(0px,0px,0px);
+}
+
+/*ANIMATIONS*/
+@keyframes typing {
+    from{width: 0;}
+    to {width: 57rem;}
+}
+
+@keyframes cursor{
+    from{border-right-color: rgba(0,0,0,0.75);}
+    to {border-right-color: transparent;}
 }
