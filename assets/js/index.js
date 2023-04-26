@@ -2,6 +2,8 @@ const skills = document.querySelectorAll('.skill');
 const descricao = document.querySelector('.skill-desc');
 const verMais = document.querySelector('.project-more');
 const verMenos = document.querySelector('.project-less');
+const target = document.querySelectorAll('[data-section]');
+const animationClass = 'animate';
 const sobreSkill = [
                     '<p>HTML</p> <br> <p>É uma linguagem de marcação utilizada na construção de páginas na Web.</p> <br>',
                     '<p>CSS</p> <br> <p>É um mecanismo para adicionar estilo a um documento web.</p> <br>',
@@ -12,6 +14,14 @@ const sobreSkill = [
                     '<p>Git</p> <br> <p>É um sistema de controle de versões distribuído, usado principalmente no desenvolvimento de software.</p> <br>',
                     '<p>Github</p> <br> <p>É uma plataforma de hospedagem de código-fonte e arquivos com controle de versão usando o Git. </p> <br>'
 ];
+
+window.onload = function(){
+    if(window.pageYOffset == 0){
+        document.querySelector('.initial').classList.add(animationClass);
+    }
+    setTimeout(function(){
+    }, 600);   
+}
 
 skills.forEach(  (elemento, index) => {
     elemento.addEventListener('mouseover', () => {
@@ -34,4 +44,19 @@ verMenos.addEventListener('click', function(){
     verMais.classList.add('showFlex');
     verMenos.classList.add('hidden');
     verMenos.classList.remove('showFlex');
+});
+
+function sectionScroll(){
+    const windowTop = window.pageYOffset + ((window.innerHeight * 3) / 4);
+    target.forEach(function(element){
+        if((windowTop) > element.offsetTop){
+            element.classList.add(animationClass);
+        }else{
+            element.classList.remove(animationClass);
+        }
+    });
+}
+
+window.addEventListener('scroll', function(){
+    sectionScroll();
 });
