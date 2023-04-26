@@ -3,6 +3,7 @@ const descricao = document.querySelector('.skill-desc');
 const verMais = document.querySelector('.project-more');
 const verMenos = document.querySelector('.project-less');
 const target = document.querySelectorAll('[data-section]');
+const tema_button = document.querySelectorAll('.tema-button');
 const animationClass = 'animate';
 const sobreSkill = [
                     '<p>HTML</p> <br> <p>É uma linguagem de marcação utilizada na construção de páginas na Web.</p> <br>',
@@ -21,6 +22,33 @@ window.onload = function(){
     }
     setTimeout(function(){
     }, 600);   
+}
+
+window.addEventListener('scroll', function(){
+    sectionScroll();
+});
+
+function changeTheme(){
+    if(tema_button){
+        tema_button.forEach(function(button){
+            button.addEventListener('click', function(event){
+                event.preventDefault();
+                console.log('Cliquei');
+                
+                if(event.target.classList.contains('light')){
+                    event.target.classList.remove('light');
+                    event.target.classList.add('dark');
+                    document.body.classList.remove('light');
+                    document.body.classList.add('dark');
+                }else{
+                    event.target.classList.remove('dark');
+                    event.target.classList.add('light');
+                    document.body.classList.remove('dark');
+                    document.body.classList.add('light');
+                }           
+            });
+        });
+    }
 }
 
 skills.forEach(  (elemento, index) => {
@@ -57,6 +85,4 @@ function sectionScroll(){
     });
 }
 
-window.addEventListener('scroll', function(){
-    sectionScroll();
-});
+changeTheme();
