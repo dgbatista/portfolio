@@ -126,7 +126,6 @@ h2 {
     background-color: transparent;
 }
 .theme-button:hover{
-    height: 3rem;
     opacity: .5;
 }
 .theme-button img{
@@ -346,6 +345,14 @@ h2 {
 .skill:hover{
     opacity: 0.6;
 }
+.skill-desc{
+    font-size: 2rem;
+    line-height: 3rem;
+}
+.skill:hover {
+    background-color: var(--primary);
+}
+
 footer{
     background-color: var(--secondary);   
     color: var(--quaternary);
