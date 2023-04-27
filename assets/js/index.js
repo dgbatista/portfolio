@@ -3,7 +3,7 @@ const descricao = document.querySelector('.skill-desc');
 const verMais = document.querySelector('.project-more');
 const verMenos = document.querySelector('.project-less');
 const target = document.querySelectorAll('[data-section]');
-const tema_button = document.querySelectorAll('.tema-button');
+const theme_button = document.querySelectorAll('.theme-button');
 const animationClass = 'animate';
 const sobreSkill = [
                     '<p>HTML</p> <br> <p>É uma linguagem de marcação utilizada na construção de páginas na Web.</p> <br>',
@@ -29,22 +29,23 @@ window.addEventListener('scroll', function(){
 });
 
 function changeTheme(){
-    if(tema_button){
-        tema_button.forEach(function(button){
+    if(theme_button){
+        theme_button.forEach(function(button){
             button.addEventListener('click', function(event){
                 event.preventDefault();
-                console.log('Cliquei');
                 
                 if(event.target.classList.contains('light')){
                     event.target.classList.remove('light');
                     event.target.classList.add('dark');
                     document.body.classList.remove('light');
                     document.body.classList.add('dark');
+                    document.querySelector('#theme-img').src='assets/images/sol.png';
                 }else{
                     event.target.classList.remove('dark');
                     event.target.classList.add('light');
                     document.body.classList.remove('dark');
                     document.body.classList.add('light');
+                    document.querySelector('#theme-img').src='assets/images/lua.png';
                 }           
             });
         });
@@ -74,7 +75,10 @@ verMenos.addEventListener('click', function(){
     verMenos.classList.remove('showFlex');
 });
 
+
+
 function sectionScroll(){
+    
     const windowTop = window.pageYOffset + ((window.innerHeight * 3) / 4);
     target.forEach(function(element){
         if((windowTop) > element.offsetTop){

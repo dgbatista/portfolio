@@ -116,20 +116,31 @@ h2 {
 .navbar>nav a:hover::after{
     width: 100%;
 }
-.tema{
+.theme{
     margin-left: 2rem;
 }
-.tema-button{
-    height: 2rem;
-    width: 4rem;
+.theme-button{
+    height: 2.5rem;
+    width: 2.5rem;
     cursor: pointer;
+    background-color: transparent;
+}
+.theme-button:hover{
+    height: 3rem;
+    opacity: .5;
+}
+.theme-button img{
+    height: 100%;
+    width: auto;
+    background-color: transparent;
+    transition: all 0.5s;
 }
 .initial-area{
     width: 100%;
     height: 100vh;
     display: flex;
     overflow: hidden;
-    padding: 10rem 0;
+    padding: 10rem 0 0 0;
 }
 .initial-left{
     flex:1;
