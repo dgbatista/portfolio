@@ -36,7 +36,7 @@ html{
     padding: 0;
 }
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Courier, Helvetica, Arial, sans-serif;
     font-size: 1.6rem; 
     background-color: var(--primary);
     color: var(--secondary);
@@ -215,13 +215,12 @@ h2 {
 }
 #about-me h2{
     margin-bottom: 2rem;
-
 }
 #about-me p{
     margin-top: 1rem;
     line-height: 2.8rem;
 }
-.projects {
+.projects{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -239,19 +238,28 @@ h2 {
     margin: 0 0.5rem;
     width: 100%;
     max-width: 37rem;
-    height: 50rem;
+    height: 25rem;
     text-align: center;
     border-radius: 1rem;
     overflow: hidden;
     margin-top: 2rem;
+    cursor:pointer;
+    transition: all 0.3s ease-in-out;
 }
 .projects-item img{
     transition: all .3s;    
 }
-.projects-item:hover.projects-item img{
-    height: 53rem;
+.projects-item:hover{
     opacity: .8;
-    cursor: pointer;
+}
+.projects-item-desc{
+    position: absolute;
+    bottom: 0rem;
+    width: 90%;
+    padding:0.5rem 0;
+    margin-bottom: 1rem;
+    border-radius: 1rem;   
+    background-color: var(--tertiary);
 }
 .projects-item span{
     display: inline-block;
@@ -265,20 +273,6 @@ h2 {
     color: var(--tertiary);
     transform: rotate(-50deg);
     margin: auto;
-}
-.projects-item-desc{
-    position: absolute;
-    bottom: 0rem;
-    width: 90%;
-    background-color: var(--tertiary);
-    opacity: .4;
-    padding:1rem 0;
-    margin-bottom: 1rem;
-    border-radius: 1rem;
-}
-.projects-item:hover .projects-item-desc{
-    opacity:1;
-    cursor:pointer;
 }
 .projects-item-desc h3 {
     opacity: 1;
@@ -422,6 +416,10 @@ footer{
     min-width: 30rem;
     max-width: 34rem;
     border-radius: 0.5rem;
+}
+.item-curso{
+    font-weight: bold;
+    color: var(--primary);
 }
 .item-curso,
 .item-curso-school,
