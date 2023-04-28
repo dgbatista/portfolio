@@ -116,20 +116,30 @@ h2 {
 .navbar>nav a:hover::after{
     width: 100%;
 }
-.tema{
+.theme{
     margin-left: 2rem;
 }
-.tema-button{
-    height: 2rem;
-    width: 4rem;
+.theme-button{
+    height: 2.5rem;
+    width: 2.5rem;
     cursor: pointer;
+    background-color: transparent;
+}
+.theme-button:hover{
+    opacity: .5;
+}
+.theme-button img{
+    height: 100%;
+    width: auto;
+    background-color: transparent;
+    transition: all 0.5s;
 }
 .initial-area{
     width: 100%;
     height: 100vh;
     display: flex;
     overflow: hidden;
-    padding: 10rem 0;
+    padding: 10rem 0 0 0;
 }
 .initial-left{
     flex:1;
@@ -165,6 +175,9 @@ h2 {
     justify-content: flex-start;
     margin-top: 10rem;
 }
+.buttons a{
+    list-style: none;    
+}
 .button{
     position: relative;
     width: 20rem;
@@ -178,32 +191,21 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.button div {
-    position: absolute;
-    z-index: 0;
-    height: 100%;
-    width: 100%;
-    line-height: 7rem;
-    border-radius: 0.5rem;
-    background-color: transparent;
-    transition: ease 0.3s;
+    color: var(--secondary);
 }
 .button span{
     position: absolute;
     z-index: 1;
 }
-.buttons .button:nth-child(2){
+.buttons a:nth-child(2){
     width: 25rem;
 }
-.buttons .button:nth-child(3){
+.buttons a:nth-child(3){
     width: 30rem;
 }
-.buttons .button:nth-child(4){
-    width: 35rem;
-}
 .button:hover{
-    background-color: teal;
+    background-color: var(--secondary);
+    color:var(--primary);
 }
 #about-me {
     background-color: var(--tertiary);
@@ -324,17 +326,33 @@ h2 {
     flex-wrap: wrap;
 }
 .skill{
-    background-color: var(--secondary);
+    background-color: var(--primary);
     width: 10rem;
     height:10rem;
+    padding: 0.5rem;
     border-radius:1rem;
     margin-right: 2rem;
     margin-bottom: 2rem;
     cursor:pointer;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.skill img{
+    height: 100%;
+    width: auto;
 }
 .skill:hover{
+    opacity: 0.6;
+}
+.skill-desc{
+    font-size: 2rem;
+    line-height: 3rem;
+}
+.skill:hover {
     background-color: var(--primary);
 }
+
 footer{
     background-color: var(--secondary);   
     color: var(--quaternary);
@@ -441,21 +459,23 @@ footer p {
     justify-content: center;
     align-items: center;
 }
-.footer-contact-item:hover img{ 
-    opacity: 0.5;
-    width: 6.2rem;
-    height: auto;
-}
 .footer-contact-item img{
     height:auto;
-    width: 100%;
+    width: 95%;
     background-color: var(--primary);
     border-radius: 1rem;
     transition: all 0.3s;
 }
+.footer-contact-item:hover img{ 
+    opacity: 0.5;
+    width: 100%;
+}
+
 .footer-contacts{
-    display: inline-flex;
-    gap: 2rem;
+    width: 22rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-right: 0.9rem;
     cursor: pointer;
 }
