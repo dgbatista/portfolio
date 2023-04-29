@@ -5,6 +5,7 @@ const verMenos = document.querySelector('.project-less');
 const target = document.querySelectorAll('[data-section]');
 const theme_button = document.querySelectorAll('.theme-button');
 const animationClass = 'animate';
+const menuBar  = document.querySelector('.bar');
 const sobreSkill = [
                     '<p>HTML</p> <br> <p>É uma linguagem de marcação utilizada na construção de páginas na Web.</p> <br>',
                     '<p>CSS</p> <br> <p>É um mecanismo para adicionar estilo a um documento web.</p> <br>',
@@ -26,6 +27,11 @@ window.onload = function(){
 
 window.addEventListener('scroll', function(){
     sectionScroll();
+});
+
+
+menuBar.addEventListener('click', function(){
+    openClosedMenu();
 });
 
 /*Função trocar tema da pagina*/
@@ -65,21 +71,19 @@ skills.forEach(  (elemento, index) => {
     // } )
 } );
 
-verMais.addEventListener('click', function(){
-    document.querySelector('.more').style.display = 'flex';
-    verMais.classList.add('hidden');
-    verMais.classList.remove('showFlex');
-    verMenos.classList.add('showFlex');
-});
-verMenos.addEventListener('click', function(){
-    document.querySelector('.more').style.display = 'none';
-    verMais.classList.remove('hidden');
-    verMais.classList.add('showFlex');
-    verMenos.classList.add('hidden');
-    verMenos.classList.remove('showFlex');
-});
-
-
+// verMais.addEventListener('click', function(){
+//     document.querySelector('.more').style.display = 'flex';
+//     verMais.classList.add('hidden');
+//     verMais.classList.remove('showFlex');
+//     verMenos.classList.add('showFlex');
+// });
+// verMenos.addEventListener('click', function(){
+//     document.querySelector('.more').style.display = 'none';
+//     verMais.classList.remove('hidden');
+//     verMais.classList.add('showFlex');
+//     verMenos.classList.add('hidden');
+//     verMenos.classList.remove('showFlex');
+// });
 
 function sectionScroll(){
     
@@ -93,4 +97,33 @@ function sectionScroll(){
     });
 }
 
+function openClosedMenu(){
+    var header = document.querySelector("#header").getAttribute('data-header');
+    if(header == 'closed'){
+        document.querySelector('#header').style.height = '200px';
+        document.querySelector("#header").setAttribute('data-header', 'open');
+        document.querySelector('#nav').style.display = 'flex';
+        document.querySelector('.bar').style.display = 'none';
+        document.addEventListener("mouseup", function(event) {
+            var obj = document.getElementById("header");
+            if (!obj.contains(event.target)) {
+                closedMenu();
+            }
+        });       
+    }else{
+        document.querySelector('#header').style.height = '80px';
+        document.querySelector("#header").setAttribute('data-header', 'closed');
+        document.querySelector('#nav').style.display = 'none';
+    }
+}
+
+function closedMenu(){
+    document.querySelector('#header').style.height = '80px';
+    document.querySelector("#header").setAttribute('data-header', 'closed');
+    document.querySelector('#nav').style.display = 'none';
+    document.querySelector('.bar').style.display = 'flex';
+}
+
+
 changeTheme();
+
