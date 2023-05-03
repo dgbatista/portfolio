@@ -49,11 +49,11 @@ body{
     padding: 8rem 0;
 }
 h1 {
-    font-size: 7rem;
+    font-size: 8vw;
 }
 h2 {
     margin: 1rem 0 3rem 0;
-    font-size: 6rem;
+    font-size: 7vw;
     text-align: center;
 }
 #header {
@@ -79,13 +79,12 @@ h2 {
     max-width: inherit;
 }
 .bar{
-    display: block;
     position: absolute;
     top: 2rem;
     right: 2rem;
-    height:4rem;
-    width: 6rem;
-    display: flex;
+    height:3.5rem;
+    width: 4rem;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -176,6 +175,7 @@ h2 {
     border-right: 3px solid rgba(0,0,0,0.75);
     white-space: nowrap;
     overflow: hidden;
+
 }
 .initial-right{
     flex:1 ;
@@ -491,7 +491,6 @@ footer p {
     opacity: 0.5;
     width: 100%;
 }
-
 .footer-contacts{
     width: 22rem;
     display: flex;
@@ -500,7 +499,6 @@ footer p {
     margin-right: 0.9rem;
     cursor: pointer;
 }
-
 [data-section] {
     opacity:0;
     transition: 1s;
@@ -517,7 +515,7 @@ footer p {
 /*ANIMATIONS*/
 @keyframes typing {
     from{width: 0;}
-    to {width: 57rem;}
+    to {width: 33rem;}
 }
 
 @keyframes cursor{
@@ -526,7 +524,7 @@ footer p {
 }
 
 /*RESPONSIVITY*/
-@media (min-width: 900px) and (max-width: 1024px){
+@media screen and (min-width: 900px) and (max-width: 1024px){
     .container{
         max-width: 96vw;
     }    
@@ -534,7 +532,7 @@ footer p {
         font-size: 2rem;
     }
 }
-@media (min-width: 768px) and (max-width: 899px){
+@media screen and (min-width: 768px) and (max-width: 899px){
 
     .container{
         max-width: 96vw;
@@ -547,7 +545,7 @@ footer p {
     }
 
 }
-@media (min-width: 425px) and (max-width: 767px){
+@media screen and (min-width: 425px) and (max-width: 767px){
     .container{
         max-width: 96vw;
     }
@@ -560,5 +558,74 @@ footer p {
         justify-content: start;
         margin-top: 1rem;
         height: 100%;
+    }
+    .bar {
+        display: flex;
+    }
+    .skills-area {
+        flex-direction: column;
+        margin: 1rem 3rem;
+    }
+    .skills-right{
+        order: 1;
+        margin-bottom: 0.5rem
+    }
+    .skills-left{
+        order: 2;
+    }
+    .footers {
+        flex-direction: column;
+    }
+    .footers p{
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .footer-contacts{
+      margin-top: 10px;
+    }
+}
+@media screen and (max-width: 425px){
+    .container{
+        max-width: 96vw;
+    }
+    .logo{
+        display: none;
+    }
+    .navbar nav{
+        display: none;
+        flex-direction: column;
+        justify-content: start;
+        margin-top: 1rem;
+        height: 100%;
+    }
+    .bar {
+        display: flex;
+    }
+    #about-me{
+        margin-top: 4.5rem;
+    }
+    .skills-area {
+        flex-direction: column;
+        margin: 1rem 3rem;
+    }
+    .skills-right{
+        order: 1;
+        margin-bottom: 0.5rem
+    }
+    .skills-left{
+        order: 2;
+    }
+    .formation-item {
+        min-width: 90%;
+    }
+    .footers {
+        flex-direction: column;
+    }
+    .footers p{
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .footer-contacts{
+        margin-top: 10px;
     }
 }
