@@ -49,11 +49,11 @@ body{
     padding: 8rem 0;
 }
 h1 {
-    font-size: 8vw;
+    font-size: 6vw;
 }
 h2 {
     margin: 1rem 0 3rem 0;
-    font-size: 7vw;
+    font-size: 5vw;
     text-align: center;
 }
 #header {
@@ -155,7 +155,7 @@ h2 {
 }
 .initial-area{
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 80px);
     display: flex;
     overflow: hidden;
     padding: 10rem 0 0 0;
@@ -515,7 +515,7 @@ footer p {
 /*ANIMATIONS*/
 @keyframes typing {
     from{width: 0;}
-    to {width: 33rem;}
+    to {width: 100%;}
 }
 
 @keyframes cursor{
@@ -573,6 +573,9 @@ footer p {
     .skills-left{
         order: 2;
     }
+    .formation-sub-area{
+        justify-content: center;
+    }
     .footers {
         flex-direction: column;
     }
@@ -588,6 +591,12 @@ footer p {
     .container{
         max-width: 96vw;
     }
+    h1{
+        font-size: 9vw;
+    }
+    h2{
+        font-size: 5.5vw;
+    }
     .logo{
         display: none;
     }
@@ -598,11 +607,22 @@ footer p {
         margin-top: 1rem;
         height: 100%;
     }
+    .buttons {
+        margin-top: 1rem;
+        height:auto;
+    }
+    .button {
+        height: 5.5rem;
+    }
     .bar {
         display: flex;
     }
-    #about-me{
-        margin-top: 4.5rem;
+    .initial-left p:nth-child(1) {
+        margin-top: 3rem;
+        font-size: 2rem;
+    }
+    .job{
+        font-size: 2rem;
     }
     .skills-area {
         flex-direction: column;

@@ -18,6 +18,7 @@ const sobreSkill = [
                     '<p>MySQL</p> <br> <p>O MySQL é um sistema de gerenciamento de banco de dados relacional de código aberto, apoiado pela Oracle e baseado em linguagem de consulta estruturada (SQL).</p> <br>',
                     '<p>Github</p> <br> <p>É uma plataforma de hospedagem de código-fonte e arquivos com controle de versão usando o Git. </p> <br>'
 ];
+console.log(screen.matches);
 
 /*Eventos*/
 window.onload = function(){
@@ -110,7 +111,7 @@ function sectionScroll(){
 
 function openClosedMenu(){
     var header = document.querySelector("#header").getAttribute('data-header');
-    if(header == 'closed'){
+    if(header == 'closed' && screen.matches){
         document.querySelector('#header').style.height = '200px';
         document.querySelector("#header").setAttribute('data-header', 'open');
         document.querySelector('#nav').style.display = 'flex';
@@ -122,17 +123,21 @@ function openClosedMenu(){
             }
         });       
     }else{
-        document.querySelector('#header').style.height = '80px';
-        document.querySelector("#header").setAttribute('data-header', 'closed');
-        document.querySelector('#nav').style.display = 'none';
+        if(screen.matches){
+            document.querySelector('#header').style.height = '80px';
+            document.querySelector("#header").setAttribute('data-header', 'closed');
+            document.querySelector('#nav').style.display = 'none';
+        }
     }
 }
 
 function closedMenu(){
-    document.querySelector('#header').style.height = '80px';
-    document.querySelector("#header").setAttribute('data-header', 'closed');
-    document.querySelector('#nav').style.display = 'none';
-    document.querySelector('.bar').style.display = 'flex';
+    if(screen.matches){
+        document.querySelector('#header').style.height = '80px';
+        document.querySelector("#header").setAttribute('data-header', 'closed');
+        document.querySelector('#nav').style.display = 'none';
+        document.querySelector('.bar').style.display = 'flex';
+    }    
 }
 
 changeTheme();
