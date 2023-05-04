@@ -1,28 +1,32 @@
 :root {
-    --primary: #FFF;
-    --secondary: #100f0f;
-    --tertiary: #f1c913;
-    --quaternary: #CCC;
+    --header: rgba(255, 255, 255, 0.9);
+    --primary: rgb(253, 253, 253);
+    --secondary: rgb(16, 15, 15);
+    --tertiary: rgba(1, 21, 59, 0.932);
+    --quaternary: rgb(204, 204, 204);
+    --alpha: 0.8;
 }
 button .light{
     background-color: var(--primary);
-    color: var(--secondary);
+    color: var(--primary);
 }
 button .dark{
     background-color: var(--secondary);;
     color: var(--primary);
 }
 .light{
-    --primary: #FFF;
-    --secondary: #100f0f;
-    --tertiary: #f1c913;
+    --header: rgba(255, 255, 255, 0.9);
+    --primary: rgb(255, 255, 255);
+    --secondary: rgb(16, 15, 15);
+    --tertiary: rgba(1, 21, 59, 0.932);
     --quaternary: #CCC;
 }
 .dark{
-    --primary: #100f0f;
-    --secondary: #FFF;
-    --tertiary: #FF00FF;
-    --quaternary: #CCC;
+    --header: rgba(16, 15, 15, 0.9);
+    --primary: rgb(16, 15, 15);
+    --secondary: rgb(255, 255, 255);
+    --tertiary: rgb(3, 207, 243);
+    --quaternary: rgb(204, 204, 204);
 }
 
 html{
@@ -46,7 +50,7 @@ body{
 #projects,
 #skills, 
 #contact{
-    padding: 8rem 0;
+    padding: 8rem 0 4rem 0;
 }
 h1 {
     font-size: 6vw;
@@ -62,8 +66,9 @@ h2 {
     height: 8rem;
     position: fixed;
     top:0;
-    background-color: var(--secondary);
+    background-color: var(--header);
     transition: all 0.5s;
+    border-bottom: 2px solid var(--tertiary);
 }
 .container{
     width: 100vw;
@@ -139,8 +144,8 @@ h2 {
     margin-left: 2rem;
 }
 .theme-button{
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 2.8rem;
+    width: auto;
     cursor: pointer;
     background-color: transparent;
 }
@@ -151,6 +156,7 @@ h2 {
     height: 100%;
     width: auto;
     background-color: transparent;
+    border-radius: 50%;
     transition: all 0.5s;
 }
 .initial-area{
@@ -204,14 +210,14 @@ h2 {
     height: 7rem;
     font-size: 3rem;
     font-weight: bold;
-    background-color: var(--tertiary);
+    background-color: var(--secondary);
     border-radius: 0.5rem;
     cursor:pointer;
     margin-bottom: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--secondary);
+    color: var(--primary);
 }
 .button span{
     position: absolute;
@@ -224,7 +230,7 @@ h2 {
     width: 30rem;
 }
 .button:hover{
-    background-color: var(--secondary);
+    background-color: var(--tertiary);
     color:var(--primary);
 }
 #about-me {
@@ -232,6 +238,7 @@ h2 {
     width: 100%;
     height: auto;
     text-align: center;
+    color: var(--primary);
 }
 #about-me h2{
     margin-bottom: 2rem;
@@ -282,6 +289,7 @@ h2 {
     margin-bottom: 1rem;
     border-radius: 1rem;   
     background-color: var(--tertiary);
+    color: var(--primary);
 }
 .projects-item span{
     display: inline-block;
@@ -299,7 +307,6 @@ h2 {
 .projects-item-desc h3 {
     opacity: 1;
     font-size: 2.5rem;
-    color: var(--secondary);
 }
 .button.project-more {
     margin-top: 3rem;
@@ -325,6 +332,7 @@ h2 {
 }
 #skills{
     background-color: var(--tertiary);
+    color: var(--primary);
 }
 .skills-area {
     display: flex;
@@ -342,7 +350,7 @@ h2 {
     flex-wrap: wrap;
 }
 .skill{
-    background-color: var(--primary);
+    background-color: #FFF;
     width: 10rem;
     height:10rem;
     padding: 0.5rem;
@@ -370,8 +378,7 @@ h2 {
 }
 
 footer{
-    background-color: var(--secondary);   
-    color: var(--quaternary);
+    background-color: var(--primary);   
 }
 
 .contact-area{
@@ -415,9 +422,6 @@ footer{
     max-height: 6rem;
     font-size: 2.5rem;
 }
-#contact h2 {
-    color: var(--quaternary);
-}
 .formation-area {
     display: flex;
     flex-direction: row;
@@ -426,18 +430,18 @@ footer{
 .formation-sub-area{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 .formation-item{
     flex: 1;
-    border: 2px solid #333;
-    color: #999;
     padding: 1.1rem;
     margin: 2rem;
     min-width: 30rem;
     max-width: 34rem;
     border-radius: 0.5rem;
+    background-color: var(--secondary);
+    color: var(--primary);
 }
 .item-curso{
     font-weight: bold;
@@ -470,6 +474,18 @@ footer p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--tertiary);
+    color: var(--primary);
+    padding: 1rem;
+
+}
+.footers .footer-content{
+    flex:1;
+    max-width: 114rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .footer-contact-item{
     width: 6rem;
@@ -483,7 +499,7 @@ footer p {
 .footer-contact-item img{
     height:auto;
     width: 95%;
-    background-color: var(--primary);
+    background-color: #FFF;
     border-radius: 1rem;
     transition: all 0.3s;
 }

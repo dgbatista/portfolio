@@ -77,25 +77,7 @@ skills.forEach(  (elemento, index) => {
     }else{
         descricao.innerHTML = '/* Clique sobre a habilidade para ler a descrição.*/';
     }
-    
-    // elemento.addEventListener('mouseout', () => {
-    //     descricao.innerHTML = '/* Passe o mouse por cima de alguma habilidade para ler a descrição */';
-    // } )
 } );
-
-// verMais.addEventListener('click', function(){
-//     document.querySelector('.more').style.display = 'flex';
-//     verMais.classList.add('hidden');
-//     verMais.classList.remove('showFlex');
-//     verMenos.classList.add('showFlex');
-// });
-// verMenos.addEventListener('click', function(){
-//     document.querySelector('.more').style.display = 'none';
-//     verMais.classList.remove('hidden');
-//     verMais.classList.add('showFlex');
-//     verMenos.classList.add('hidden');
-//     verMenos.classList.remove('showFlex');
-// });
 
 function sectionScroll(){
     
