@@ -199,6 +199,9 @@ h2::after{
     font-size: 3.8rem;
     margin-top: 6rem;
 }
+.name{
+    display: inline-block;
+}
 .name h1{
     border-right: 3px solid rgba(0,0,0,0.75);
     white-space: nowrap;
@@ -580,7 +583,6 @@ footer p {
     .projects-item-desc h3{
         font-size: 2rem;
     }
-
 }
 @media screen and (min-width: 425px) and (max-width: 767px){
     .container{

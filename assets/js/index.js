@@ -19,34 +19,8 @@ const sobreSkill = [
                     '<p>MySQL</p> <br> <p>O MySQL é um sistema de gerenciamento de banco de dados relacional de código aberto, apoiado pela Oracle e baseado em linguagem de consulta estruturada (SQL).</p> <br>',
                     '<p>Github</p> <br> <p>É uma plataforma de hospedagem de código-fonte e arquivos com controle de versão usando o Git. </p> <br>'
 ];
-console.log(screen.matches);
 
-/*Eventos*/
-window.onload = function(){
-    if(window.pageYOffset == 0){
-        document.querySelector('.initial').classList.add(animationClass);
-    }
-    setTimeout(function(){
-    }, 600);   
-}
-
-window.addEventListener('scroll', function(){
-    sectionScroll();
-});
-
-menuBar.addEventListener('click', function(){
-    openClosedMenu();
-});
-
-menu_a.forEach(function(target){
-    target.addEventListener('click', closedMenu);
-});
-
-closed_bar.addEventListener('click', function(){
-    closedMenu();
-})
-
-/*Função trocar tema da pagina*/
+/********************Função trocar tema da pagina********************/
 function changeTheme(){
     if(theme_button){
         theme_button.forEach(function(button){
@@ -70,20 +44,9 @@ function changeTheme(){
         });
     }
 }
-skills.forEach(  (elemento, index) => {
-    elemento.addEventListener('mouseover', () => {
-        descricao.innerHTML = `<p>${sobreSkill[index]} </p>` ;
-    } )
-    if(!screen.matches){
-        document.querySelector('.skills-area').addEventListener('mouseout', () => {
-            descricao.innerHTML = '/* Passe o mouse por cima de alguma habilidade para ler a descrição*/';
-        } )
-    }else{
-        descricao.innerHTML = '/* Clique sobre a habilidade para ler a descrição.*/';
-    }
-} );
+/********************FIM********************/
 
-/*função para as sessões aparecerem ao rolar o scroll da tela*/
+/*****Função para as sessões aparecerem ao rolar o scroll da tela********/
 function sectionScroll(){
     
     const windowTop = window.pageYOffset + ((window.innerHeight * 3) / 4);
@@ -95,8 +58,11 @@ function sectionScroll(){
         }
     });
 }
+/********************FIM********************/
 
-/*Função para abrir e fechar o menu em telas menores que 767px*/
+/*Função para abrir e fechar o menu em telas menores que 768px*/
+
+/*Abrir menu*/
 function openClosedMenu(){
     var header = document.querySelector("#header").getAttribute('data-header');
     if(header == 'closed' && screen.matches){
@@ -122,6 +88,7 @@ function openClosedMenu(){
     }
 }
 
+/*Função fecha menu*/
 function closedMenu(){
     if(screen.matches){
         document.querySelector('#header').style.height = '80px';
@@ -131,10 +98,45 @@ function closedMenu(){
         closed_bar.style.display = 'none';
     }    
 }
+/********************FIM********************/
 
-function closedBar(){
-    console.log('funcionando');
+/********************************Eventos********************************/
+window.onload = function(){
+    if(window.pageYOffset == 0){
+        document.querySelector('.initial').classList.add(animationClass);
+    }
+    setTimeout(function(){
+    }, 600); 
+    changeTheme();  
 }
 
-changeTheme();
+window.addEventListener('scroll', function(){
+    sectionScroll();
+});
+
+menuBar.addEventListener('click', function(){
+    openClosedMenu();
+});
+
+menu_a.forEach(function(target){
+    target.addEventListener('click', closedMenu);
+});
+
+closed_bar.addEventListener('click', function(){
+    closedMenu();
+})
+
+skills.forEach(  (elemento, index) => {
+    elemento.addEventListener('mouseover', () => {
+        descricao.innerHTML = `<p>${sobreSkill[index]} </p>` ;
+    } )
+    if(!screen.matches){
+        document.querySelector('.skills-area').addEventListener('mouseout', () => {
+            descricao.innerHTML = '/* Passe o mouse por cima de alguma habilidade para ler a descrição*/';
+        } )
+    }else{
+        descricao.innerHTML = '/* Clique sobre a habilidade para ler a descrição.*/';
+    }
+} );
+/********************************FIM EVENTOS********************************/
 
