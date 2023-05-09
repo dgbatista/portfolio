@@ -8,6 +8,7 @@ const theme_button = document.querySelectorAll('.theme-button');
 const menu_a = document.querySelectorAll('.navigator');
 const animationClass = 'animate';
 const menuBar  = document.querySelector('.bar');
+const closed_bar = document.querySelector('.closed-bar');
 const sobreSkill = [
                     '<p>HTML</p> <br> <p>É uma linguagem de marcação utilizada na construção de páginas na Web.</p> <br>',
                     '<p>CSS</p> <br> <p>É um mecanismo para adicionar estilo a um documento web.</p> <br>',
@@ -41,6 +42,10 @@ menu_a.forEach(function(target){
     target.addEventListener('click', closedMenu);
 });
 
+closed_bar.addEventListener('click', function(){
+    closedMenu();
+})
+
 /*Função trocar tema da pagina*/
 function changeTheme(){
     if(theme_button){
@@ -65,7 +70,6 @@ function changeTheme(){
         });
     }
 }
-
 skills.forEach(  (elemento, index) => {
     elemento.addEventListener('mouseover', () => {
         descricao.innerHTML = `<p>${sobreSkill[index]} </p>` ;
@@ -79,6 +83,7 @@ skills.forEach(  (elemento, index) => {
     }
 } );
 
+/*função para as sessões aparecerem ao rolar o scroll da tela*/
 function sectionScroll(){
     
     const windowTop = window.pageYOffset + ((window.innerHeight * 3) / 4);
@@ -91,13 +96,17 @@ function sectionScroll(){
     });
 }
 
+/*Função para abrir e fechar o menu em telas menores que 767px*/
 function openClosedMenu(){
     var header = document.querySelector("#header").getAttribute('data-header');
     if(header == 'closed' && screen.matches){
         document.querySelector('#header').style.height = '200px';
         document.querySelector("#header").setAttribute('data-header', 'open');
-        document.querySelector('#nav').style.display = 'flex';
+        setTimeout(function(){
+            document.querySelector('#nav').style.display = 'flex';
+        }, 200);       
         document.querySelector('.bar').style.display = 'none';
+        closed_bar.style.display = 'block';
         document.addEventListener("mouseup", function(event) {
             var obj = document.getElementById("header");
             if (!obj.contains(event.target)) {
@@ -119,7 +128,12 @@ function closedMenu(){
         document.querySelector("#header").setAttribute('data-header', 'closed');
         document.querySelector('#nav').style.display = 'none';
         document.querySelector('.bar').style.display = 'flex';
+        closed_bar.style.display = 'none';
     }    
+}
+
+function closedBar(){
+    console.log('funcionando');
 }
 
 changeTheme();

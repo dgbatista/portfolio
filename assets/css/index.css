@@ -108,6 +108,20 @@ h2::after{
     width: 6rem;
     background-color: white;
 }
+.closed-bar{
+    display: none;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    position: absolute;
+    right: 2rem;
+    top:2rem;
+    color: var(--tertiary);
+    font-size: 2.5rem;
+    border: 1px solid var(--tertiary);
+    border-radius: 50%;
+    line-height: 4rem;
+}
 .navbar .logo{
     flex:1;
     height: 5rem;
@@ -445,7 +459,6 @@ footer{
     max-width: 34rem;
     border: 4px solid var(--tertiary);
     border-radius: 0.5rem;
-    /* background-color: var(--secondary); */
     color: var(--quartiary);
 }
 .item-curso{
@@ -472,14 +485,13 @@ footer{
 }
 footer p {
     font-size: 2rem;
-    color: var(--primary);
     line-height: 2rem;
 }
 .footers {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--primary);
+    color: var(--secondary);
     padding: 1rem;
 
 }
@@ -491,6 +503,9 @@ footer p {
     justify-content: space-between;
     align-items: center;
 }
+.footer-text{
+    text-align: start;
+}
 .footer-contact-item{
     width: 6rem;
     height: 6rem;
@@ -501,9 +516,9 @@ footer p {
     align-items: center;
 }
 .footer-contact-item img{
-    height:auto;
     width: 95%;
     background-color: #FFF;
+    border: 1px solid var(--tertiary);
     border-radius: 1rem;
     transition: all 0.3s;
 }
@@ -513,11 +528,13 @@ footer p {
 }
 .footer-contacts{
     width: 22rem;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-right: 0.9rem;
     cursor: pointer;
+    text-align: center;
 }
 [data-section] {
     opacity:0;
@@ -664,6 +681,9 @@ footer p {
     .footers p{
         text-align: center;
         margin-bottom: 10px;
+    }
+    .footer-content{
+        flex-direction: column;
     }
     .footer-contacts{
         margin-top: 10px;
