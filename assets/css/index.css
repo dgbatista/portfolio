@@ -65,8 +65,16 @@ h2::after{
     content: "";
     display: block;
     height: 0.4rem;
-    width: 100%;
+    width: 0%;
     background: linear-gradient(90deg,#8257E6 0%,#c36ae9, #A40EE4 92.32%);
+    transition: width .5s linear;
+}
+#about-me:hover h2::after,
+#projects:hover h2::after,
+#skills:hover h2::after,
+#contact:hover h2::after
+{
+    width: 100%;
 }
 #header {
     z-index: 1;
@@ -526,7 +534,7 @@ footer p {
     transition: all 0.3s;
 }
 .footer-contact-item:hover img{ 
-    opacity: 0.5;
+    opacity: 0.7;
     width: 100%;
 }
 .footer-contacts{
