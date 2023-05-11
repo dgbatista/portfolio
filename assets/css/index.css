@@ -39,6 +39,7 @@ body{
     font-size: 1.8rem; 
     background-color: var(--primary);
     color: var(--secondary);
+    z-index:1;
 }
 #about-me,
 #projects,

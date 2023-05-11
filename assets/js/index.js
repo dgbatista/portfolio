@@ -9,6 +9,7 @@ const menu_a = document.querySelectorAll('.navigator');
 const animationClass = 'animate';
 const menuBar  = document.querySelector('.bar');
 const closed_bar = document.querySelector('.closed-bar');
+const bolhas = document.querySelectorAll('.bolhas span');
 const sobreSkill = [
                     '<p>HTML</p> <br> <p>É uma linguagem de marcação utilizada na construção de páginas na Web.</p> <br>',
                     '<p>CSS</p> <br> <p>É um mecanismo para adicionar estilo a um documento web.</p> <br>',
@@ -28,12 +29,14 @@ function changeTheme(){
                 event.preventDefault();
                 
                 if(event.target.classList.contains('light')){
+                    ativarBolhas();
                     event.target.classList.remove('light');
                     event.target.classList.add('dark');
                     document.body.classList.remove('light');
                     document.body.classList.add('dark');
                     document.querySelector('#theme-img').src='assets/images/sol.png';
                 }else{
+                    desativarBolhas();
                     event.target.classList.remove('dark');
                     event.target.classList.add('light');
                     document.body.classList.remove('dark');
@@ -100,6 +103,19 @@ function closedMenu(){
 }
 /********************FIM********************/
 
+/*Função ativar/desativar bolhas modo noturno*/
+function ativarBolhas(){
+    bolhas.forEach(function(item){
+        item.style.display = 'inline-block';
+    });
+}
+function desativarBolhas(){
+    bolhas.forEach(function(item){
+        item.style.display = 'none';
+    });
+}
+
+/*Fim função ativar bolhas*/
 /********************************Eventos********************************/
 window.onload = function(){
     if(window.pageYOffset == 0){

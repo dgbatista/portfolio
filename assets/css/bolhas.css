@@ -1,0 +1,38 @@
+.bolhas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    /* min-height: 100vh; */
+    overflow-y: hidden;
+    z-index: -10;
+}
+.bolhas span{
+    display: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: yellow;
+    margin: 0 4px;
+    box-shadow: 0 0 0 10px #ffff0044,
+    0 0 50px #ffff00,
+    0 0 100px #ffff00;
+    animation: animarBolhas calc(30s / var(--i)) linear infinite;
+}
+.bolhas span:nth-last-of-type(even){
+    background: #2dc3ff;
+    box-shadow: 0 0 0 10px #2dc3ff44,
+    0 0 50px #2dc3ff,
+    0 0 100px #2dc3ff;
+}
+@keyframes animarBolhas {
+    0%{
+        transform: translateY(100vh) scale(0);
+    }   
+    100%{
+        transform: translateY(0) scale(1);
+    }
+}
