@@ -58,7 +58,7 @@ h1 {
 }
 h2 {
     display: inline-block;
-    margin: 2rem 0 4rem 0;
+    margin: 2rem 0 8rem 0;
     font-size: 3vw;
     text-align: center;
     color: var(--secondary);
@@ -234,7 +234,6 @@ h2::after{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin-top: 10rem;
 }
 .buttons a{
     list-style: none;    
@@ -291,7 +290,19 @@ h2::after{
     justify-content: space-around;
     text-align: center;
     flex-wrap: wrap;
-    margin: 4rem 0;
+    padding: 4rem 0;
+}
+
+.projects-area:nth-child(even){
+    border-left: 3px solid var(--quartiary);
+    border-bottom: 3px solid var(--quartiary);
+}
+.projects-area:nth-child(odd){
+    border-right: 2px solid var(--quartiary);
+    border-bottom: 2px solid var(--quartiary);
+}
+.projects-area:nth-last-child(3){
+    border-top: 2px solid var(--quartiary);
 }
 .project-left,
 .project-right{
@@ -306,10 +317,6 @@ h2::after{
     align-items: center;
 }
 .project-left .project-photo img{
-    left:0;
-    top: 0;
-    right: 0;
-    bottom: 0;
     width: 100%;
     height: auto;
     border: 0.4rem solid var(--tertiary);
@@ -549,8 +556,8 @@ footer p {
     .container{
         max-width: 96vw;
     }    
-    .projects-item-desc h3{
-        font-size: 2rem;
+    .project-right p {
+        line-height: 3.5rem;
     }
 }
 @media screen and (min-width: 768px) and (max-width: 899px){
@@ -561,11 +568,12 @@ footer p {
     .navbar>nav{
         margin-right: 1rem;
     }    
-    .projects-item-desc h3{
-        font-size: 2rem;
+    .projects-area{
+        display: block;
     }
+
 }
-@media screen and (min-width: 425px) and (max-width: 767px){
+@media screen and (max-width: 767px){
     .container{
         max-width: 96vw;
     }
@@ -581,6 +589,12 @@ footer p {
     }
     .bar {
         display: flex;
+    }
+    .projects-area{
+        display: block;
+    }
+    .projects-right p{
+        text-align: center;
     }
     .skills-area {
         flex-direction: column;
@@ -643,6 +657,10 @@ footer p {
     }
     .job{
         font-size: 2rem;
+    }
+    .project-right p{
+        text-align: center;
+        line-height: 2.5rem;
     }
     .skills-area {
         flex-direction: column;
