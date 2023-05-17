@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/index.css?1.1" />
+    <link rel="stylesheet" href="assets/css/index.css" />
     <link rel="stylesheet" href="assets/css/bolhas.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +28,7 @@
         <span style="--i:2.8"></span>
     </div>
     <header id="header" data-header="closed">
+        <div class="container"> 
             <div class="navbar">
                 <div class="logo">
                     <a href="#initial"><img src="assets/images/logo.png"/></a>
@@ -37,7 +38,7 @@
                     <a class="navigator" href="#about-me">Sobre</a>
                     <a class="navigator" href="#projects">Projetos</a>
                     <a class="navigator" href="#skills">Habilidades</a>
-                    <a class="navigator" href="#contact">Contato</a>
+                    <a class="navigator" href="#footer">Contato</a>
                     <div class="theme">
                         <button class="theme-button navigator" type="button">
                             <img id="theme-img" src="assets/images/lua.png" class="light" title="Trocar Tema"/>
@@ -111,8 +112,8 @@
                             <div class="project-photo">
                                 <div class="project-buttons">
                                     <div class="project-button">
-                                        <a href=""><span>Web</span></a>
-                                        <a href=""><span>Repositorio</span></a>
+                                        <a href="https://www.josienascimento.com" target="_blank"><span>Web</span></a>
+                                        <a href="https://github.com/dgbatista/josie" target="_blank"><span>Repositorio</span></a>
                                     </div>
                                 </div>
                                 <img src="assets/images/siteJosie.png" />
@@ -120,7 +121,10 @@
                         </div>
                         <div class="project-right">
                             <p>
-                                Site pessoal desenvolvido com html, css e JavaScript 
+                                Site pessoal criado especialmente para a professora de inglês Josie Nascimento.  
+                                Com seu site, ela pretende proporcionar uma 
+                                experiência de aprendizado personalizada, adaptada às necessidades e 
+                                objetivos de cada aluno.
                             </p>
                         </div>
                     </div>
@@ -129,15 +133,16 @@
                             <div class="project-photo">
                                 <div class="project-buttons">
                                     <div class="project-button">
-                                        <a href=""><span>Web</span></a>
-                                        <a href=""><span>Repositorio</span></a>
+                                        <!-- <a href=""><span>Web</span></a> -->
+                                        <a href="https://github.com/dgbatista/devsbook" target="_blank"><span>Repositorio</span></a>
                                     </div>
                                 </div>
                                 <img src="assets/images/devsbook.png" />
                             </div>
                         </div>
                         <div class="project-right">
-                            <p>Site clone do Facebook
+                            <p>Projeto pessoal clone do site do Facebook, criado para desafiar, 
+                                aprofundar e solidificar os conhecimentos adquiridos. 
                             </p>
                         </div>
                     </div>
@@ -146,20 +151,16 @@
                             <div class="project-photo">
                                 <div class="project-buttons">
                                     <div class="project-button">
-                                        <a href=""><span>Web</span></a>
-                                        <a href=""><span>Repositorio</span></a>
+                                        <!-- <a href=""><span>Web</span></a> -->
+                                        <a href="https://github.com/dgbatista/todoTarefas"><span>Repositorio</span></a>
                                     </div>
                                 </div>
-                                <img src="assets/images/temporario.jpg" />
+                                <img src="assets/images/todoLaravel.png" />
                             </div>
                         </div>
                         <div class="project-right">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                Sequi itaque, molestias aliquam quas temporibus error excepturi. 
-                                In, aspernatur? Illo est repellendus sed dolores ipsa voluptatum 
-                                officia impedit maiores a accusamus.
-                                Illo est repellendus sed dolores ipsa voluptatum 
-                                officia impedit maiores a accusamus.
+                            <p> Sistema "Todo" de tarefas. Desenvolvido com Laravel e MySQL, 
+                                foi criado neste projeto um sistema web com autenticação, criação e gestão das tarefas, além de um gráfico de avanço das tarefas finalizadas.
                             </p>
                         </div>
                     </div>
@@ -291,7 +292,7 @@
                     <p>Entre em contato para conversarmos.</p>
                 </div>
                 <div> 2023 </div>
-                <div class=footer-contacts>
+                <div id="footer" class=footer-contacts>
                     <div class="footer-contact-item">
                         <a href="https://www.linkedin.com/in/douglas-batista-de-abreu-81281612a/" target="_blank">
                             <img src="assets/images/linkedin.jpg" />
