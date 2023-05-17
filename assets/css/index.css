@@ -678,6 +678,9 @@ footer p {
     .bar {
         display: flex;
     }
+    .initial-right-img{
+        display: none;
+    }
     .projects-area{
         flex-direction: column;
         align-items: center;
