@@ -191,7 +191,7 @@ h2::after{
 }
 .initial-area{
     width: 100%;
-    height: calc(100vh - 80px);
+    height: 100vh;
     display: flex;
     overflow: hidden;
     padding: 10rem 0 0 0;
@@ -218,6 +218,19 @@ h2::after{
 }
 .initial-right{
     flex:1 ;
+}
+.initial-right-img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.initial-right-img img{
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+    height: 50vh;
+    width: auto;
+    animation: home-office 3s linear infinite;
 }
 .typing-animation {
     animation: cursor 1s infinite steps(40) normal,
@@ -611,6 +624,18 @@ footer p {
 @keyframes project {
     from{height: 0;}
     to {height: 100%;}
+}
+
+@keyframes home-office {
+    0%{
+        bottom: 3rem;
+    }
+    50%{
+        bottom: 0rem;
+    }
+    100%{
+        bottom: 3rem;
+    }
 }
 
 /*RESPONSIVITY*/
