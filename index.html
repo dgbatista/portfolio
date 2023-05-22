@@ -1,31 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/bolhas.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
     <title>Portfolio Douglas</title>
 </head>
 <body>
-    <header id="header">
-        <div class="container">
+    <div class="bolhas">
+        <span style="--i:7"></span>
+        <span style="--i:4"></span>
+        <span style="--i:6"></span>
+        <span style="--i:5.5"></span>
+        <span style="--i:9"></span>
+        <span style="--i:3"></span>
+        <span style="--i:7"></span>
+        <span style="--i:4.5"></span>
+        <span style="--i:8.1"></span>
+        <span style="--i:3"></span>
+        <span style="--i:2.5"></span>
+        <span style="--i:8.5"></span>
+        <span style="--i:2.8"></span>
+    </div>
+    <header id="header" data-header="closed">
+        <div class="container"> 
             <div class="navbar">
                 <div class="logo">
                     <a href="#initial"><img src="assets/images/logo.png"/></a>
                 </div>                
-                <nav>
-                    <a href="#initial">Inicio</a>                    
-                    <a href="#about-me">Sobre mim</a>
-                    <a href="#projects">Projetos</a>
-                    <a href="#skills">Habilidades</a>
-                    <a href="#contact">Contato</a>
+                <nav id="nav">
+                    <a class="navigator" href="#initial">Inicio</a>                    
+                    <a class="navigator" href="#about-me">Sobre</a>
+                    <a class="navigator" href="#projects">Projetos</a>
+                    <a class="navigator" href="#skills">Habilidades</a>
+                    <a class="navigator" href="#footer">Contato</a>
                     <div class="theme">
-                        <button class="theme-button" type="button">
+                        <button class="theme-button navigator" type="button">
                             <img id="theme-img" src="assets/images/lua.png" class="light" title="Trocar Tema"/>
                         </button>
                     </div>
                 </nav>
+                <div class="bar">
+                    <div class="bar-div"></div>
+                    <div class="bar-div"></div>
+                    <div class="bar-div"></div>
+                </div>
+                <div class="closed-bar">X</div>
             </div>
         </div>
     </header>
@@ -34,9 +59,10 @@
             <div class="container  initial" data-section>
                 <div class="initial-area">
                     <div class="initial-left">
-                        <div>
+                        <div class="initial-left-buttons">
                             <p>Olá, eu sou</p>
-                            <div class="name"><h1 class="typing-animation">Douglas Batista.</div></h1>
+                            <div class="name">
+                                <h1 class="typing-animation">Douglas Batista.</div></h1>
                             <div class="job">Desenvolvedor Web | PHP</div>
                         </div>
                         <div class="buttons">
@@ -52,8 +78,9 @@
                         </div>
                     </div>
                     <div class="initial-right">
-                        .
-                        <img src="" />
+                        <div class="initial-right-img">
+                            <img src="assets/images/home-office.png" />
+                        </div>                        
                     </div>
                 </div>
             </div>
@@ -61,20 +88,19 @@
         
         <section class="about-me" id="about-me" data-section>
             <div class="container" >
-                <h2>Sobre mim</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    At asperiores unde voluptate? Aspernatur expedita incidunt 
-                    repudiandae doloribus dicta voluptate explicabo suscipit 
-                    inventore impedit velit, culpa dolorem voluptates ullam qui 
-                    autem?
+                <h2 class="h2_hover">Sobre mim</h2>
+                <p>Desenvolvedor Web e PHP. Sou formado em Ciência da Computação 
+                    e apaixonado por programação. Além disso, sou 
+                    empreendedor e estou sempre em busca de novas oportunidades
+                     para aplicar minhas habilidades e conhecimentos.
                 </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    At asperiores unde voluptate? Aspernatur expedita incidunt 
-                    repudiandae doloribus dicta voluptate explicabo suscipit 
-                    inventore impedit velit, culpa dolorem voluptates ullam qui 
-                    autem?
-                    mpedit velitmpedit velitmpedit velit mpedit velitmpedit velit
-                    mpedit velit mpedit velitmpedit velitmpedit velitmpedit velit
+                <p> Ao longo da minha carreira, tive a oportunidade de desenvolver 
+                    diversos projetos desafiadores e complexos, o que me
+                      permitiu adquirir uma sólida base de conhecimentos em 
+                      diversas tecnologias e frameworks web. Minha especialidade 
+                      em PHP me permite criar aplicações web robustas e 
+                      escaláveis, que atendem às necessidades específicas de 
+                      cada cliente.
                 </p>
             </div>
         </section>            
@@ -84,60 +110,78 @@
                 <div class="projects">
                     <h2>Projetos</h2>
                     <div class="projects-area">
-                        <div class="projects-item">
-                            <!-- <span>breve</span> -->
-                            <img src="assets/images/temporario.jpg" />
-                            <div class="projects-item-desc">
-                                <h3>Titulo do projeto</h3>
-                                <p>Descrição do projeto</p>
+                        <div class="project-left">
+                            <div class="project-photo">
+                                <div class="project-buttons">
+                                    <div class="project-button">
+                                        <a href="https://www.josienascimento.com" target="_blank"><span>Web</span></a>
+                                        <a href="https://github.com/dgbatista/josie" target="_blank"><span>Repositorio</span></a>
+                                    </div>
+                                </div>
+                                <img src="assets/images/siteJosie.png" />
                             </div>
                         </div>
-                        <div class="projects-item">
-                            <!-- <span>breve</span> -->
-                            <img src="assets/images/temporario.jpg" />
-                            <div class="projects-item-desc">
-                                <h3>Titulo do projeto</h3>
-                                <p>Descrição do projeto</p>
-                            </div>
-                        </div>
-                        <div class="projects-item">
-                            <!-- <span>breve</span> -->
-                            <img src="assets/images/temporario.jpg" />
-                            <div class="projects-item-desc">
-                                <h3>Titulo do projeto</h3>
-                                <p>Descrição do projeto</p>
-                            </div>
+                        <div class="project-right">
+                            <p>
+                                Site pessoal criado especialmente para a professora de inglês Josie Nascimento.  
+                                Com seu site, ela pretende proporcionar uma 
+                                experiência de aprendizado personalizada, adaptada às necessidades e 
+                                objetivos de cada aluno.
+                            </p>
                         </div>
                     </div>
-                    <div class="button project-more">Ver mais</div>
-                    <div class="more">
-                        <div class="projects-item">
-                            <!-- <span>breve</span> -->
-                            <img src="assets/images/temporario.jpg" />
-                            <div class="projects-item-desc">
-                                <h3>Titulo do projeto</h3>
-                                <p>Descrição do projeto</p>
+                    <div class="projects-area">
+                        <div class="project-left">
+                            <div class="project-photo">
+                                <div class="project-buttons">
+                                    <div class="project-button">
+                                        <!-- <a href=""><span>Web</span></a> -->
+                                        <a href="https://github.com/dgbatista/devsbook" target="_blank"><span>Repositorio</span></a>
+                                    </div>
+                                </div>
+                                <img src="assets/images/devsbook.png" />
                             </div>
                         </div>
-                        <div class="projects-item">
-                            <!-- <span>breve</span> -->
-                            <img src="assets/images/temporario.jpg" />
-                            <div class="projects-item-desc">
-                                <h3>Titulo do projeto</h3>
-                                <p>Descrição do projeto</p>
-                            </div>
-                        </div>
-                        <div class="projects-item">
-                            <!-- <span>breve</span> -->
-                            <img src="assets/images/temporario.jpg" />
-                            <div class="projects-item-desc">
-                                <h3>Titulo do projeto</h3>
-                                <p>Descrição do projeto</p>
-                            </div>
+                        <div class="project-right">
+                            <p>Projeto pessoal clone do site do Facebook, criado para desafiar, 
+                                aprofundar e solidificar os conhecimentos adquiridos. 
+                            </p>
                         </div>
                     </div>
-                    <div class="button project-less">Ver menos</div>
+                    <div class="projects-area">
+                        <div class="project-left">
+                            <div class="project-photo">
+                                <div class="project-buttons">
+                                    <div class="project-button">
+                                        <!-- <a href=""><span>Web</span></a> -->
+                                        <a href="https://github.com/dgbatista/todoTarefas"><span>Repositorio</span></a>
+                                    </div>
+                                </div>
+                                <img src="assets/images/todoLaravel.png" />
+                            </div>
+                        </div>
+                        <div class="project-right">
+                            <p> Sistema "Todo" de tarefas. Desenvolvido com Laravel e MySQL, 
+                                foi criado neste projeto um sistema web com autenticação, criação e gestão das tarefas, além de um gráfico de avanço das tarefas finalizadas.
+                            </p>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div class="bolhas">
+                <span style="--i:7"></span>
+                <span style="--i:4"></span>
+                <span style="--i:6"></span>
+                <span style="--i:5.5"></span>
+                <span style="--i:9"></span>
+                <span style="--i:3"></span>
+                <span style="--i:7"></span>
+                <span style="--i:4.5"></span>
+                <span style="--i:8.1"></span>
+                <span style="--i:3"></span>
+                <span style="--i:2.5"></span>
+                <span style="--i:8.5"></span>
+                <span style="--i:2.8"></span>
             </div>
         </section>
         <section id="skills" data-section>
@@ -145,30 +189,46 @@
                 <h2>Habilidades</h2>
                 <div class="skills-area">
                     <div class="skills-left">
-                        <div class="skill">
-                            <img src="assets/images/html.png" />
-                        </div>
-                        <div class="skill">
-                            <img src="assets/images/css.png" />
-                        </div> 
-                        <div class="skill">
-                            <img src="assets/images/javascript.png" />
-                        </div> 
-                        <div class="skill">
-                            <img src="assets/images/git.png" />
-                        </div> 
-                        <div class="skill">
-                            <img src="assets/images/php.png" />
-                        </div> 
-                        <div class="skill">
-                            <img src="assets/images/laravel.png" />
-                        </div>  
-                        <div class="skill">
-                            <img src="assets/images/mysql.png" />
-                        </div>
-                        <div class="skill">
-                            <img src="assets/images/github-.png" />
-                        </div>                      
+                        <a href="#skills">
+                            <div class="skill">
+                                <img src="assets/images/html.png" />
+                            </div>
+                        </a>
+                        <a href="#skills">
+                            <div class="skill">
+                                <img src="assets/images/css.png" />
+                            </div>
+                        </a>
+                        <a href="#skills">
+                            <div class="skill">
+                                <img src="assets/images/javascript.png" />
+                            </div> 
+                        </a>
+                        <a href="#skills">
+                            <div class="skill">
+                                <img src="assets/images/git.png" />
+                            </div> 
+                        </a>
+                        <a href="#skills">
+                            <div class="skill">
+                                <img src="assets/images/php.png" />
+                            </div>
+                        </a>
+                        <a href="#skills">
+                            <div class="skill">
+                                <img src="assets/images/laravel.png" />
+                            </div> 
+                        </a>
+                        <a href="#skills"> 
+                            <div class="skill">
+                                <img src="assets/images/mysql.png" />
+                            </div>
+                        </a>
+                        <a href="#skills">
+                            <div class="skill">
+                                <img src="assets/images/github-.png" />
+                            </div>  
+                        </a>                    
                     </div>
                     <div class="skills-right">
                         <div class="skills-right-msg">
@@ -191,36 +251,50 @@
                             <div class="item-curso">Bacharel</div>
                             <div class="item-curso-name">Ciência da Computação</div>
                             <div class="item-curso-school"> - Universidade Nove de Julho</div>
-                            <div class="item-curso-date">2022 - 2024</div>
+                            <div class="item-curso-date">2011 - 2015</div>
                         </div>
                         <div class="formation-item">
-                            <div class="item-curso">Bacharel</div>
-                            <div class="item-curso-name">Ciência da Computação</div>
-                            <div class="item-curso-school"> - Universidade Nove de Julho</div>
-                            <div class="item-curso-date">2022 - 2024</div>
+                            <div class="item-curso">Curso</div>
+                            <div class="item-curso-name">HTML5 e CSS3</div>
+                            <div class="item-curso-school"> - B7Web</div>
+                            <div class="item-curso-date">89h - 2022</div>
                         </div>
                         <div class="formation-item">
-                            <div class="item-curso">Bacharel</div>
-                            <div class="item-curso-name">Ciência da Computação</div>
-                            <div class="item-curso-school"> - Universidade Nove de Julho</div>
-                            <div class="item-curso-date">2022 - 2024</div>
+                            <div class="item-curso">Curso</div>
+                            <div class="item-curso-name">JavaScript</div>
+                            <div class="item-curso-school"> - B7Web</div>
+                            <div class="item-curso-date">77h - 2022</div>
                         </div>
                         <div class="formation-item">
-                            <div class="item-curso">Bacharel</div>
-                            <div class="item-curso-name">Ciência da Computação</div>
-                            <div class="item-curso-school"> - Universidade Nove de Julho</div>
-                            <div class="item-curso-date">2022 - 2024</div>
+                            <div class="item-curso">Curso</div>
+                            <div class="item-curso-name">PHP</div>
+                            <div class="item-curso-school"> - B7Web</div>
+                            <div class="item-curso-date">92h - 2022</div>
+                        </div>
+                        <div class="formation-item">
+                            <div class="item-curso">Curso</div>
+                            <div class="item-curso-name">Git/GitHub</div>
+                            <div class="item-curso-school"> - B7Web</div>
+                            <div class="item-curso-date">20h - 2023</div>
+                        </div>
+                        <div class="formation-item">
+                            <div class="item-curso">Curso</div>
+                            <div class="item-curso-name">Laravel</div>
+                            <div class="item-curso-school"> - B7Web</div>
+                            <div class="item-curso-date">80h - 2023 - Cursando</div>
                         </div>
                     </div>
             </div> 
             <div class="footer-bar"></div>
-            <div class="footers">
-                <div>
+        </div>
+        <div class="footers">
+            <div class="footer-content">
+                <div class="footer-text">
                     <p>Estou disponível para novos projetos.</p>
                     <p>Entre em contato para conversarmos.</p>
                 </div>
                 <div> 2023 </div>
-                <div class=footer-contacts>
+                <div id="footer" class=footer-contacts>
                     <div class="footer-contact-item">
                         <a href="https://www.linkedin.com/in/douglas-batista-de-abreu-81281612a/" target="_blank">
                             <img src="assets/images/linkedin.jpg" />
@@ -237,10 +311,24 @@
                         </a>                        
                     </div>
                 </div>
-            </div>  
+            </div>
+        </div>
+        <div class="bolhas">
+            <span style="--i:7"></span>
+            <span style="--i:4"></span>
+            <span style="--i:6"></span>
+            <span style="--i:5.5"></span>
+            <span style="--i:9"></span>
+            <span style="--i:3"></span>
+            <span style="--i:7"></span>
+            <span style="--i:4.5"></span>
+            <span style="--i:8.1"></span>
+            <span style="--i:3"></span>
+            <span style="--i:2.5"></span>
+            <span style="--i:8.5"></span>
+            <span style="--i:2.8"></span>
         </div>
     </footer>
-
     <script src="assets/js/index.js"></script>
 </body>
 </html>
