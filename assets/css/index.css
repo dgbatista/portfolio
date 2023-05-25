@@ -57,7 +57,7 @@ h1 {
 h2 {
     display: inline-block;
     margin: 8rem 0 4rem 0;
-    font-size: 3vw;
+    font-size: 4rem;
     text-align: center;
     color: var(--secondary);
 }
@@ -94,7 +94,7 @@ h2::after{
 .navbar{
     height: 8rem;
     display: flex;
-    justify-content:center;
+    justify-content:space-around;
     align-items:center;
     width: 100%;
     max-width: inherit;
@@ -201,7 +201,6 @@ h2::after{
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
 }
 .initial-left-buttons{
     font-size: 3.8rem;
@@ -241,43 +240,36 @@ h2::after{
     margin-top: 1rem;
 }
 .buttons {
-    height: 35rem;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: space-around;
+    gap:0.5em;
+    margin-top: 6vh;
 }
 .buttons a{
     list-style: none;    
 }
 .button{
     position: relative;
-    width: 20rem;
-    height: 6rem;
-    font-size: 2.5rem;
+    width: 100%;
+    height: 5rem;
+    font-size: 2rem;
     font-weight: 500;
-    background-color: var(--primary);
-    border: 2px solid var(--secondary);
+    background-color: var(--tertiary);
     border-radius: 0.5rem;
     cursor:pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--tertiary);
+    color: var(--primary);
+    margin-top: 2rem;
+}
+.button:hover{
+    opacity: .8;
+    transform: scale(1.02);
 }
 .button span{
     position: absolute;
     z-index: 1;
-}
-.buttons a:nth-child(2){
-    width: 25rem;
-}
-.buttons a:nth-child(3){
-    width: 30rem;
-}
-.button:hover{
-    background-color: var(--tertiary);
-    color:#FFF;
 }
 #about-me {
     width: 100%;
@@ -428,7 +420,7 @@ h2::after{
     display: flex;
 }
 .skills-left{
-    justify-content:space-between;
+    justify-content: center;
     align-items:center;
     flex-wrap: wrap;
 }
@@ -668,6 +660,9 @@ footer p {
     .logo{
         display: none;
     }
+    .navbar{
+        justify-content: normal;
+    }
     .navbar nav{
         display: none;
         flex-direction: column;
@@ -675,12 +670,28 @@ footer p {
         margin-top: 1rem;
         height: 100%;
     }
+    .buttons{
+        flex-wrap: wrap;
+    }
+    .button{
+        max-width: 50%;
+    }
     .bar {
         display: flex;
     }
-    .initial-right-img{
-        display: none;
+    .initial-area{
+        height: 100%;
     }
+    .initial-left{
+        text-align: center;
+    }
+    .initial-right{
+        display: none;
+        flex: 0;
+    }
+    /* .initial-right-img{
+        display: none;
+    } */
     .projects-area{
         flex-direction: column;
         align-items: center;
@@ -719,9 +730,6 @@ footer p {
     }
     h1{
         font-size: 9vw;
-    }
-    h2{
-        font-size: 5.5vw;
     }
     .logo{
         display: none;
